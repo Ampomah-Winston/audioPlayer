@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="audioPlayer.jnlp">
+    <information>
+        <title>audioPlayer</title>
+        <vendor>WYNXTYN PROAUTOTYPE</vendor>
+        <description>null</description>
+        <offline-allowed/>
+    </information>
+    <update check="always"/>
+    <resources>
+        <j2se version="10.0.2+" href="http://java.sun.com/products/autodl/j2se"/>
+        <jar href="audioPlayer.jar" size="120206" download="eager"/>
+        <jar href="lib\jfoenix-9.0.8_2.jar" size="2419463" download="eager"/>
+        <jar href="lib\jmetro-11.6.11-javadoc.jar" size="473897" download="eager"/>
+        <jar href="lib\jmetro-11.6.11.jar" size="84273" download="eager"/>
+        <jar href="lib\tika-core-1.4.jar" size="489590" download="eager"/>
+        <jar href="lib\tika-parsers-1.4.jar" size="511016" download="eager"/>
+    </resources>
+    <jfx:javafx-desc width="800" height="600" main-class="myAudioPlayer.MyAudioPlayer_main" name="MyAudioPlayer_main"/>
+</jnlp>
+

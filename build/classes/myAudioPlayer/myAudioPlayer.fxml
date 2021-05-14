@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXSlider?>
+<?import java.net.URL?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.shape.Circle?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1366.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myAudioPlayer.MyAudioPlayer_Controller">
+    <stylesheets>
+        <URL value="@myaudioplayer.css" />
+    </stylesheets>
+   <children>
+      <HBox layoutX="152.0" layoutY="180.0" prefHeight="720.0" prefWidth="1366.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox prefHeight="720.0" prefWidth="1739.0">
+               <children>
+                  <Pane fx:id="mediaViewer_Container" layoutX="10.0" layoutY="10.0" prefHeight="593.0" prefWidth="1026.0" style="-fx-background-color: white;">
+                     <children>
+                        <MediaView fx:id="mediaViewer" fitHeight="593.0" fitWidth="968.0" layoutX="14.0" onMouseClicked="#media_viewer_on_mouse_click" />
+                     </children></Pane>
+                  <JFXSlider fx:id="seek_slider" onMousePressed="#seek_slider_on_mouse_drag_Pressed" onMouseReleased="#seek_slider_on_mouse_drag_Released" showTickMarks="true" value="-1.0" />
+                  <Pane layoutX="10.0" layoutY="10.0" prefHeight="129.0" prefWidth="968.0" style="-fx-background-color: #21dacc;">
+                     <children>
+                        <Circle fill="#1f93ff00" layoutX="480.0" layoutY="60.0" radius="36.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0" />
+                        <Circle fill="#1f93ff00" layoutX="569.0" layoutY="49.0" radius="28.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0" />
+                        <JFXButton fx:id="btn_play" buttonType="RAISED" layoutX="452.0" layoutY="32.0" onAction="#play_pause" prefHeight="56.0" prefWidth="56.0" style="-fx-border-radius: 40px; -fx-background-radius: 40px; -fx-background-color: white;" text="Play" />
+                        <JFXButton fx:id="btn_stop" buttonType="RAISED" layoutX="547.0" layoutY="27.0" onAction="#stop" prefHeight="44.0" prefWidth="45.0" style="-fx-border-radius: 40px; -fx-background-radius: 40px; -fx-background-color: white;" text="Stop" />
+                        <JFXSlider fx:id="volumer_slider" layoutX="813.0" layoutY="14.0" prefHeight="14.0" prefWidth="218.0" showTickLabels="true" showTickMarks="true" />
+                        <ImageView fitHeight="37.0" fitWidth="35.0" layoutX="754.0" layoutY="9.0">
+                           <image>
+                              <Image url="@speaker.png" />
+                           </image>
+                        </ImageView>
+                        <CheckBox fx:id="chk_repeat" layoutX="753.0" layoutY="80.0" mnemonicParsing="false" onAction="#repeat" text="Repeat" />
+                        <CheckBox fx:id="chk_shuffle" layoutX="847.0" layoutY="80.0" mnemonicParsing="false" onAction="#shuffling" text="Shuffle" />
+                     </children></Pane>
+               </children>
+            </VBox>
+            <VBox layoutX="10.0" layoutY="10.0" prefHeight="720.0" prefWidth="1034.0" style="-fx-background-color: #21dacc;">
+               <children>
+                  <ProgressBar fx:id="progressLoader" prefHeight="18.0" prefWidth="331.0" progress="0.0" />
+                  <JFXListView fx:id="list_all_music" onDragDropped="#list_music_on_Drag_Dropped" onDragOver="#list_music_on_Drag_Over" onMouseClicked="#list_music_mouse_clicked" prefHeight="720.0" prefWidth="360.0" />
+               </children></VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
